@@ -11,8 +11,6 @@ const exampleMail = {
   contentType: 'text/plain'
 }
 
-// test.afterEach(() => iwm.flushMails())
-
 test('Nodemailer loads a correct transport', () => {
   let transport = nodeMailer.createTransport(stubTransport)
 
