@@ -6,16 +6,16 @@
 Stub transport for Nodemailer. Testing your mails in Node.js is now easy.
 
 ## Installation
-```
-yarn add nodemailer-stub -D
-... or via npm
-npm install nodemailer-stub --save-dev
+```console
+$ yarn add nodemailer-stub -D
+#... or via npm
+$ npm install nodemailer-stub --save-dev
 ```
 
 ## Usage
 This is an example use case for the stub.
 
-```
+```javascript
 import { stubTransport } from 'nodemailer-stub'
 import nodeMailer from 'nodemailer'
 
@@ -31,7 +31,7 @@ let mail = await transport.sendMail({
 
 We've also included a neat testing utility class, called `interactsWithMail`. You can use it in your tests like this:
 
-```
+```javascript
 import { interactsWithMail as iwm } from 'nodemailer-stub'
 
 const exampleMail = {
@@ -86,8 +86,8 @@ Retrieves a count of how many emails were sent in the last mailer call.
 ## Testing
 All tests can be executed with the following command:
 
-```
-yarn test
+```console
+$ yarn test
 ```
 
 ## License
