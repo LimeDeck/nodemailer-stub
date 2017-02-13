@@ -1,0 +1,44 @@
+{
+  "name": "nodemailer-stub",
+  "version": "1.0.0",
+  "description": "Stub transport for Nodemailer. Testing your mails in Node.js is now easy.",
+  "main": "lib/main.js",
+  "repository": "git@github.com:LimeDeck/nodemailer-stub.git",
+  "author": {
+    "name": "LimeDeck",
+    "email": "mail@limedeck.io",
+    "url": "https://limedeck.io"
+  },
+  "keywords": [
+    "nodemailer",
+    "stub",
+    "transport",
+    "testing",
+    "email",
+    "node"
+  ],
+  "license": "ISC",
+  "scripts": {
+    "test": "node_modules/.bin/ava",
+    "test:cov": "nyc npm run test",
+    "report": "nyc report --reporter=html; open .test/coverage/index.html"
+  },
+  "devDependencies": {
+    "nodemailer": "^3.0.2",
+    "ava": "^0.18.1",
+    "chai": "^3.5.0",
+    "eslint": "^3.14.1",
+    "eslint-config-standard": "^6.2.1",
+    "eslint-friendly-formatter": "^2.0.7",
+    "eslint-plugin-ava": "^4.0.1",
+    "eslint-plugin-promise": "^3.4.0",
+    "eslint-plugin-standard": "^2.0.1",
+    "nyc": "^10.1.2"
+  },
+  "ava": {
+    "files": "test/*.spec.js"
+  },
+  "nyc": {
+    "report-dir": ".test/coverage"
+  }
+}
