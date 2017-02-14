@@ -2,7 +2,8 @@
 
 [![Build Status](https://travis-ci.org/LimeDeck/nodemailer-stub.svg?branch=master)](https://travis-ci.org/LimeDeck/nodemailer-stub)
 [![Coverage Status](https://coveralls.io/repos/github/LimeDeck/nodemailer-stub/badge.svg?branch=master)](https://coveralls.io/github/LimeDeck/nodemailer-stub?branch=master)
-[![npm](https://img.shields.io/npm/v/nodemailer-stub.svg)](https://www.npmjs.com/package/nodemailer-stub)
+[![npm](https://img.shields.io/npm/dt/nodemailer-stub.svg)](https://www.npmjs.com/package/nodemailer-stub)
+[![GitHub release](https://img.shields.io/github/release/limedeck/nodemailer-stub.svg)]()
 
 Stub transport for Nodemailer. Testing your mails in Node.js is now easy.
 
