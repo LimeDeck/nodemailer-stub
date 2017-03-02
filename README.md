@@ -4,7 +4,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/LimeDeck/nodemailer-stub/badge.svg?branch=master)](https://coveralls.io/github/LimeDeck/nodemailer-stub?branch=master)
 [![npm](https://img.shields.io/npm/dt/nodemailer-stub.svg)](https://www.npmjs.com/package/nodemailer-stub)
 [![GitHub release](https://img.shields.io/github/release/limedeck/nodemailer-stub.svg)]()
- 
+
 Nodemailer-stub comes with a stub transport for [Nodemailer](https://github.com/nodemailer/nodemailer). The Stub stores the messages in memory but mimics real mail behaviour. It also contains a smart testing class called InteractsWithMail, which allows users to access, read, count and flush the messages in memory in their testing environment.
 
 ## Installation
@@ -31,7 +31,7 @@ let mail = await transport.sendMail({
 })
 ```
 
-We've also included a neat testing utility class, called `interactsWithMail`. You can use it in your tests like this:
+We've also included a testing utility class, called `interactsWithMail`. You can use it in your tests like this:
 
 ```javascript
 import { interactsWithMail as iwm } from 'nodemailer-stub'
@@ -60,7 +60,7 @@ test('it retrieves the last message', () => {
 **Available methods for `interactsWithMail`**:
 ### `lastMail()`
 Retrieves last mail.
-Accessible properties: 
+Accessible properties:
 
 - from
 - to
