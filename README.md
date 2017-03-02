@@ -15,7 +15,7 @@ $ npm install nodemailer-stub --save-dev
 ```
 
 ## Usage
-This is an example use case for the stub.
+This is an example use case for the Stub.
 
 ```javascript
 import { stubTransport } from 'nodemailer-stub'
