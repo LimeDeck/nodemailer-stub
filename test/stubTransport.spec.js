@@ -28,6 +28,7 @@ test('it sends a message', async () => {
   })
 
   mail.messageId.should.not.be.null
+  mail.envelope.should.not.be.null
   mail.response.should.be.instanceOf(Buffer)
   mail.from.should.eq(exampleMail.from)
   mail.to[0].should.eq(exampleMail.to)
