@@ -31,6 +31,10 @@ let mail = await transport.sendMail({
 })
 ```
 
+For testing purposes, there is also a transport called `errorTransport`, where
+the transport throws an error during execution, to help with testing the
+robustness of your mail service logic.
+
 We've also included a testing utility class, called `interactsWithMail`. You can use it in your tests like this:
 
 ```javascript
