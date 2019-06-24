@@ -45,6 +45,7 @@ const exampleMail = {
   from: 'jimmy@domain.com',
   subject: 'testing',
   content: 'foo',
+  contents: ['foo'],
   contentType: 'text/plain'
 }
 
@@ -56,7 +57,8 @@ test('it retrieves the last message', () => {
   lastMail.to.should.eq('john@domain.com')
   lastMail.from.should.eq('jimmy@domain.com')
   lastMail.subject.should.eq('testing')
-  lastMail.content.should.eq('foo')
+  lastMail.content.should.eq(['foo'])
+  lastMail.contents.should.eq(['foo'])
   lastMail.contentType.should.eq('text/plain')
 })
 ```
@@ -70,6 +72,7 @@ Accessible properties:
 - to
 - subject
 - content
+- contents
 - contentType
 
 ### `newMail (Object)`

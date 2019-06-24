@@ -34,6 +34,8 @@ test('it sends a message', async () => {
   mail.to[0].should.eq(exampleMail.to)
   mail.subject.should.eq(exampleMail.subject)
   mail.content.should.eq(exampleMail.content)
+  mail.contents.length.should.eq(1)
+  mail.contents[0].should.eq(exampleMail.content)
   mail.contentType.should.eq(exampleMail.contentType)
 })
 
@@ -51,5 +53,7 @@ test('it falls back to an empty string for subject', async () => {
   mail.to[0].should.eq(exampleMail.to)
   mail.subject.should.eq('')
   mail.content.should.eq(exampleMail.content)
+  mail.contents.length.should.eq(1)
+  mail.contents[0].should.eq(exampleMail.content)
   mail.contentType.should.eq(exampleMail.contentType)
 })
