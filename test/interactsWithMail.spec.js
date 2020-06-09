@@ -1,6 +1,4 @@
-const test = require('ava')
-require('chai').should()
-import { interactsWithMail as iwm } from '../lib/main'
+const { interactsWithMail: iwm } = require('../lib/main')
 
 const exampleMail = {
   to: 'john@domain.com',
@@ -10,36 +8,40 @@ const exampleMail = {
   contentType: 'text/plain'
 }
 
-test.afterEach(() => iwm.flushMails())
+describe('interactsWithMail', () => {
+  afterEach(() => iwm.flushMails())
 
-test('it retrieves the last message', () => {
-  iwm.newMail(exampleMail)
+  it('retrieves the last message', () => {
+    iwm.newMail(exampleMail)
 
-  let lastMail = iwm.lastMail()
+    let lastMail = iwm.lastMail()
 
-  lastMail.to.should.eq('john@domain.com')
-  lastMail.from.should.eq('jimmy@domain.com')
-  lastMail.subject.should.eq('testing')
-  lastMail.content.should.eq('foo')
-  lastMail.contentType.should.eq('text/plain')
-})
+    expect(lastMail).toMatchObject({
+      to: 'john@domain.com',
+      from: 'jimmy@domain.com',
+      subject: 'testing',
+      content: 'foo',
+      contentType: 'text/plain'
+    })
+  })
 
-test('it retrieves a correct count of mails', () => {
-  iwm.newMail(exampleMail)
+  it('retrieves the correct count of mails', () => {
+    iwm.newMail(exampleMail)
 
-  iwm.sentMailsCount().should.eq(1)
+    expect(iwm.sentMailsCount()).toBe(1)
 
-  iwm.newMail(exampleMail)
-  iwm.newMail(exampleMail)
+    iwm.newMail(exampleMail)
+    iwm.newMail(exampleMail)
 
-  iwm.sentMailsCount().should.eq(3)
-})
+    expect(iwm.sentMailsCount()).toBe(3)
+  })
 
-test('it can flush mails', () => {
-  iwm.newMail(exampleMail)
+  it('can flush mails', () => {
+    iwm.newMail(exampleMail)
 
-  iwm.sentMailsCount().should.eq(1)
+    expect(iwm.sentMailsCount()).toBe(1)
 
-  iwm.flushMails()
-  iwm.sentMailsCount().should.eq(0)
+    iwm.flushMails()
+    expect(iwm.sentMailsCount()).toBe(0)
+  })
 })
